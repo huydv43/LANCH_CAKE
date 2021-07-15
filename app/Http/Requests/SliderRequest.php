@@ -24,7 +24,7 @@ class SliderRequest extends FormRequest
     public function rules()
     {
         return [
-            'slider_image' => 'required|mimes:jpeg,jpg,png|required|max:10240',
+            'slider_image' => 'required|mimes:jpeg,jpg,png|max:10240',
             'slider_title' => 'required|min:3|max:50',
             'slider_namebtn' => 'required|min:3|max:15',
             'slider_status' => 'required',

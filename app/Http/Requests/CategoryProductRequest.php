@@ -25,7 +25,7 @@ class CategoryProductRequest extends FormRequest
     {
         return [
             'category_image' => 'required|mimes:jpeg,jpg,png|required|max:10240',
-            'category_name' => 'required|min:3|max:1000',
+            'category_name' => 'required|unique|min:3|max:500',
             'category_status' => 'required',
         ];
     }
@@ -35,6 +35,7 @@ class CategoryProductRequest extends FormRequest
         return [
             'category_image.required' => 'Bạn chưa chọn ảnh',
             'category_name.required'  => 'Bạn chưa nhập tên',
+            'category_name.unique'  => 'Tên không được trùng lặp',
             'category_status.required'  => 'bạn cần chọn trạng thái',
         ];
     }

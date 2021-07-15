@@ -1,13 +1,11 @@
 @extends('admin.admin_layout') @section('admin_content')
 <div class="table-agile-info">
     <div class="panel panel-default">
-        <div class="panel-heading">Responsive Table</div>
-        @if ($errors->any())
+        <div class="panel-heading">Danh Sách Slider</div>
+        @if ($message = Session::get('message'))
             <div class="alert alert-danger">
                 <ul>
-                    @foreach ($errors->all() as $error)
-                        <p class="text-danger">{{ $error }}</p>
-                    @endforeach
+                    {{ $message }}
                 </ul>
             </div>
         @endif
@@ -64,11 +62,6 @@
                             </td>
                             
                             <td class="d-flex align-items-center justify-content-around" style="display: flex;">
-                                <form action="{{ route('slider.show', $slider->slider_id) }}" method="get">
-                                    <button class="btn btn-sm btn-primary rounded-0">
-                                        Show
-                                    </button>
-                                </form>
                                 <form action="{{ route('slider.edit',$slider->slider_id) }}" method="get">
                                     <button class="btn btn-sm btn-warning rounded-0">
                                         Edit
