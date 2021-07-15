@@ -1,14 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Slider;
 
 use Illuminate\Http\Request;
 
 class pageController extends Controller
 {
     public function getHome()
-    {
-        return view('pages.home');
+    {   $sliders = Slider::where('slider_status','1')->get();
+        return view(
+            'pages.home',
+            ['sliders' => $sliders]
+        );
     }
 
     public function getAbout()

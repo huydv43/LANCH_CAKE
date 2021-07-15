@@ -1,37 +1,24 @@
 @extends('master')
 @section('content')
-    <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
-            <div class="hero__item set-bg" data-setbg="/sources/assets/img/hero/hero-1.jpg">
-                <div class="container">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="hero__text">
-                                <h2>Making your life sweeter one bite at a time!</h2>
-                                <a href="#" class="primary-btn">Our cakes</a>
+            @foreach ($sliders as $slider )
+                <div class="hero__item set-bg" data-setbg="{{URL::to('public/uploads/sliders/'.$slider->slider_image)}}">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="hero__text">
+                                    <h2>{{ $slider->slider_title}}</h2>
+                                    <a href="#" class="primary-btn">{{$slider->slider_namebtn}}</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="hero__item set-bg" data-setbg="/sources/assets/img/hero/hero-1.jpg">
-                <div class="container">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="hero__text">
-                                <h2>Making your life sweeter one bite at a time!</h2>
-                                <a href="#" class="primary-btn">Our cakes</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </section>
-    <!-- Hero Section End -->
 
-    <!-- About Section Begin -->
     <section class="about spad">
         <div class="container">
             <div class="row">
@@ -73,9 +60,7 @@
             </div>
         </div>
     </section>
-    <!-- About Section End -->
 
-    <!-- Categories Section Begin -->
     <div class="categories">
         <div class="container">
             <div class="row">
@@ -120,9 +105,7 @@
             </div>
         </div>
     </div>
-    <!-- Categories Section End -->
 
-    <!-- Product Section Begin -->
     <section class="product spad">
         <div class="container">
             <div class="row">
@@ -257,9 +240,7 @@
             </div>
         </div>
     </section>
-    <!-- Product Section End -->
 
-    <!-- Class Section Begin -->
     <section class="class spad">
         <div class="container">
             <div class="row">
@@ -289,9 +270,7 @@
             </div>
         </div>
     </section>
-    <!-- Class Section End -->
 
-    <!-- Team Section Begin -->
     <section class="team spad">
         <div class="container">
             <div class="row">
@@ -367,9 +346,7 @@
             </div>
         </div>
     </section>
-    <!-- Team Section End -->
 
-    <!-- Testimonial Section Begin -->
     <section class="testimonial spad">
         <div class="container">
             <div class="row">
@@ -518,9 +495,7 @@
             </div>
         </div>
     </section>
-    <!-- Testimonial Section End -->
 
-    <!-- Instagram Section Begin -->
     <section class="instagram spad">
         <div class="container">
             <div class="row">
@@ -570,9 +545,7 @@
             </div>
         </div>
     </section>
-    <!-- Instagram Section End -->
 
-    <!-- Map Begin -->
     <div class="map">
         <div class="container">
             <div class="row">
@@ -592,5 +565,4 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10784.188505644011!2d19.053119335158936!3d47.48899529453826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1543907528304" height="300" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
     </div>
-    <!-- Map End -->
-@endsection('content')
+@endsection
